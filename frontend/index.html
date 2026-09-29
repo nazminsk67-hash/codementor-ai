@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CodeMentor AI - Memory-Powered Java Code Review</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>CodeMentor AI</h1>
+      <p class="tagline">Memory-Powered Java Code Review</p>
+      <p class="subtitle">An AI code reviewer that remembers your coding patterns and improves over time.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Demo scenario -->
+    <section class="card demo" id="demoSection">
+      <h2>Demo Scenario</h2>
+      <p class="muted">Run the three demos in order, clicking "Review Code" after each one, to watch the reviewer learn.</p>
+      <div class="demo-buttons">
+        <button class="btn btn-secondary" data-demo="0">1. Load Demo Code: Null check</button>
+        <button class="btn btn-secondary" data-demo="1">2. Load Demo Code: Same mistake, new code</button>
+        <button class="btn btn-secondary" data-demo="2">3. Load Demo Code: Multiple issues</button>
+      </div>
+    </section>
+
+    <!-- Code input -->
+    <section class="card">
+      <div class="card-head">
+        <h2>Java Code</h2>
+        <span id="memoryStatus" class="pill hidden"></span>
+      </div>
+      <textarea id="code" spellcheck="false" placeholder="Paste your Java code here..."></textarea>
+      <div class="actions">
+        <button id="reviewBtn" class="btn btn-primary">Review Code</button>
+        <span id="loading" class="loading hidden"><span class="spinner"></span> Recalling memories and reviewing...</span>
+      </div>
+      <div id="error" class="error hidden"></div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="hidden">
+      <div class="card">
+        <h2>AI Review</h2>
+        <h3>Summary</h3>
+        <p id="summary"></p>
+        <h3>Issues</h3>
+        <div id="issues"></div>
+        <h3>Suggested Improvements</h3>
+        <ul id="improvements"></ul>
+      </div>
+
+      <div class="card memory-card">
+        <h2>Hindsight Memory</h2>
+        <h3>Memory Used <span class="muted">(recalled before this review)</span></h3>
+        <ul id="memoryUsed"></ul>
+        <h3>How Memory Changed This Review</h3>
+        <ul id="memoryInsights"></ul>
+        <h3>Memory Learned <span class="muted">(stored for future reviews)</span></h3>
+        <ul id="memoryLearned"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p class="muted">Powered by Groq + Hindsight memory</p>
+  </footer>
+
+<script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "codementor-ai-backend",
+  "version": "1.0.0",
+  "description": "Memory-powered Java code review agent (Groq + Hindsight)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@vectorize-io/hindsight-client": "latest",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "groq-sdk": "latest"
+  }
+}
